@@ -1,0 +1,193 @@
+
+$font-size-base: 1rem;
+$primary: rgb(198, 234, 245);
+$header-jumbotron-height: 250px;
+$section-padding: 120px;
+$section-color-alternate: rgba(5, 5, 5, 0.767);
+$menu-size: 175px;
+
+@import "lib/bootstrap/scss/bootstrap.scss";
+
+.page-header{
+    background-image: url("Bilder/hanspeter.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;  
+}
+
+.navbar-light .navbar-brand {
+    padding-top: 0.1rem;    
+    color: $section-color-alternate;
+    font-family: 'Allison', cursive;
+    font-size: 30px;  
+}
+
+.header-jumbotron{
+    background-color: transparent;
+    color: $section-color-alternate;
+    padding-top: 0px;
+    padding-bottom: 10px;
+    margin-bottom: 0px;
+    height: $header-jumbotron-height;
+
+    @include media-breakpoint-up(sm){
+        height: $header-jumbotron-height + 50px;
+    }
+    @include media-breakpoint-up(md){
+        height: $header-jumbotron-height + 100px;
+    } 
+    @include media-breakpoint-up(lg){
+        height: $header-jumbotron-height + 150px;
+    }  
+
+    h2{
+        font-style: italic;
+        margin-bottom: 0px;
+    }
+    h1{
+        font-style: bold;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+}
+
+.projects {
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+
+    .projects-icon {
+        padding-top: 0.25rem;
+        color: $primary;
+        text-align: center;
+        border: 2px solid $primary;
+        font-size: 2rem;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        margin: 0px auto 0.75rem auto;
+    }
+
+}
+
+.portfolio {
+    padding-top: $section-padding;
+    padding-bottom: $section-padding; 
+    background-color: $primary;
+
+}
+
+.aboutme {
+
+    
+    padding-top: $section-padding;
+    padding-bottom: $primary;
+
+
+    .aboutme-image{
+        border-radius: 50%;
+        border: solid $primary;
+    }
+}
+
+.social-media{
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+    background-color: $primary;
+
+    .sm-img{
+        border-radius: 50%;
+        border: 5px solid white;
+    }
+
+    .sm-links{
+        color: $section-color-alternate;
+        font-size: 2rem;
+        text-decoration: none;
+        border: solid $section-color-alternate;
+        border-radius: 50%;
+        height: 4rem;
+        width: 4rem;
+        display: block;
+        text-align: center;
+        margin: 1rem 0.4rem 0.2rem 0.2rem;
+    }
+}
+.contact-me{
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+    background-color: $section-color-alternate;
+    color: white;
+
+    .contact-message{
+        height: 5rem;
+        @include media-breakpoint-up(sm){
+            height: 100%;
+        }
+        
+    }
+
+    
+}
+
+.footer{
+    background-color: $primary;
+    .footer-icon{
+       width: 2rem;
+       height: 2rem;
+       background-color: $section-color-alternate;
+       color: white;
+       border-radius: 50%;
+       text-align: center;
+       text-decoration: none;
+       margin: 0.2rem;
+    
+
+    }
+
+    
+}
+
+
+.body {
+    overflow-x: hidden;
+}
+
+#page {
+    position: relative;
+    transition: 1s all;
+    left: 0px;
+    transform: translate(0px, 0px);
+
+
+    &.mobile-nav-open {
+        transform: translate(-$menu-size, 0px);
+    }
+
+    .mobile-nav {
+        position: fixed;
+        right: -$menu-size;
+        width: $menu-size;
+        top: 0px;
+        bottom: 0px;
+        background-color: $primary;
+
+    }
+
+    .mobile-nav-link {
+        color: black;
+        border-right: 0px solid transparent;
+        border-left: 0px solid transparent;
+        background-color: $primary;
+
+        &:last-child {
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+
+        }
+
+        &:first-child {
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+
+        }
+    }
+}
